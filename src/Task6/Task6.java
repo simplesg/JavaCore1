@@ -6,7 +6,7 @@ public class Task6 {
     public void concatenateObjects(Object[] array){
         String message = "";
         long sum = 0;
-        ArrayList<Person> personArray = new ArrayList<Person>();
+        ArrayList<Person> personArray = new ArrayList<>();
 
         for (Object obj: array) {
             if(obj instanceof String || obj instanceof Character){
