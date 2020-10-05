@@ -42,5 +42,11 @@ public class ArraysPractice {
         for (int number: newIntegers) {
             System.out.println(number);
         }
+        System.out.println("Sorted array: ");
+        newIntegers = arraysPractice.sort(newIntegers);
+        for (int number: newIntegers) {
+            System.out.println(number);
+        }
+
     }
 }
