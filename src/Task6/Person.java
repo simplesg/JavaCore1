@@ -4,13 +4,12 @@ public class Person {
     private String name;
     private Gender gender;
     private int age;
-    private int numberOfPersons;
+
 
     public Person(String name, Gender gender, int age) {
         this.name = name;
         this.gender = gender;
         this.age = age;
-        numberOfPersons++;
 
     }
 
@@ -38,9 +37,6 @@ public class Person {
         this.age = age;
     }
 
-    public int getNumberOfPersons(){
-        return numberOfPersons;
-    }
 
     @Override
     public String toString() {
