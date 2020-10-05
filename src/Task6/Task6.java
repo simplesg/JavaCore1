@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Task6 {
     public void concatenateObjects(Object[] array){
         String message = "";
-        int sum = 0;
+        long sum = 0;
         ArrayList<Person> personArray = new ArrayList<Person>();
 
         for (Object obj: array) {
@@ -15,8 +15,8 @@ public class Task6 {
             if(obj instanceof Person){
                 personArray.add((Person)obj);
             }
-            if(obj instanceof Integer){
-                sum = sum + (Integer) obj;
+            if(obj instanceof Number){
+                sum = sum + ((Number) obj).longValue();
             }
         }
         System.out.println(message);
