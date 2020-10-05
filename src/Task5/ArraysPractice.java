@@ -1,6 +1,7 @@
 package Task5;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class ArraysPractice {
     public int[] reverse(int[] array, int k){
@@ -26,8 +27,18 @@ public class ArraysPractice {
 
     public static void main(String[] args) {
         ArraysPractice arraysPractice = new ArraysPractice();
-        int[] integers = new int[]{ 1,2,3,4,5,6,7,8 };
-        int[] newIntegers = arraysPractice.reverse(integers,5);
+//        int[] integers = new int[]{ 1,2,3,4,5,6,7,8 };
+        System.out.println("Give the length of array: ");
+        Scanner scanner = new Scanner(System.in);
+        int arrayLength = Integer.parseInt(scanner.next());
+        int[] integers = new int[arrayLength];
+        System.out.println("Give the array: ");
+        for (int i = 0; i < arrayLength; i++) {
+            integers[i] = scanner.nextInt();
+        }
+        System.out.println("Give the range from which to sort: ");
+        int range = scanner.nextInt();
+        int[] newIntegers = arraysPractice.reverse(integers,range);
         for (int number: newIntegers) {
             System.out.println(number);
         }
