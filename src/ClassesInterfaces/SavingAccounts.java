@@ -36,6 +36,7 @@ public class SavingAccounts {
         System.out.println("Monthly Interest Rate is: " + saver2.calculateMonthlyInterest());
         System.out.println("Savings Balance: " + saver2.getSavingsBalance());
         annualInterestRate = 5;
+//        modifyInterestRate(5);
         System.out.println("Monthly Interest Rate is: " + saver1.calculateMonthlyInterest());
         System.out.println("Savings Balance: " + saver1.getSavingsBalance());
         System.out.println("Monthly Interest Rate is: " + saver2.calculateMonthlyInterest());
