@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArraysPractice {
+    public static int rangeK = 0;
+
     public int[] reverse(int[] array, int k){
         if(k > array.length){
             System.out.println("Invalid range!");
@@ -22,7 +24,8 @@ public class ArraysPractice {
     }
 
     public int[] sort(int[] array){
-         return Arrays.stream(array).sorted().toArray();
+//         return Arrays.stream(array).sorted().toArray();
+        return reverse(array, rangeK);
     }
 
     public static void main(String[] args) {
@@ -33,17 +36,22 @@ public class ArraysPractice {
         int arrayLength = Integer.parseInt(scanner.next());
         int[] integers = new int[arrayLength];
         System.out.println("Give the array: ");
+
         for (int i = 0; i < arrayLength; i++) {
             integers[i] = scanner.nextInt();
         }
         System.out.println("Give the range from which to sort: ");
         int range = scanner.nextInt();
+        rangeK = range;
+
         int[] newIntegers = arraysPractice.reverse(integers,range);
+
         for (int number: newIntegers) {
             System.out.println(number);
         }
         System.out.println("Sorted array: ");
         newIntegers = arraysPractice.sort(newIntegers);
+
         for (int number: newIntegers) {
             System.out.println(number);
         }
