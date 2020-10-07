@@ -6,11 +6,11 @@ public class UsePoints extends Point {
 
 
     public UsePoints(int x, int y){
-        super(x , y);
+        super(x , y);                            //uses constructor with 2 parameters from Point class
     }
 
     public UsePoints(int x , int y, int z){
-        super(x,y,z);
+        super(x,y,z);                           //uses constructor with 3 parameters from Point class
         System.out.println("This is the constructor of UsePoints class");
     }
 
@@ -21,6 +21,7 @@ public class UsePoints extends Point {
 
         UsePoints usePoints = new UsePoints(5,10);
         UsePoints usePoints1 = new UsePoints(5,10,20);
+        System.out.println(usePoints1.toString());
 
         point.getX();    // we can get the values from private fields using public methods that are getters
         point.getY();
