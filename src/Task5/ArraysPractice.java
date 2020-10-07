@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArraysPractice {
-    public static int rangeK = 0;
+    public static int rangeK = 0;    // added static public variable to store the range value of when to sort the array
 
     public int[] reverse(int[] array, int k){
         if(k > array.length){
