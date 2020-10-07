@@ -6,5 +6,5 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
-
+ #Ignore out folder
 /../../../../../../:\Users\sgorea\IdeaProjects\untitled3\out\production\untitled3
