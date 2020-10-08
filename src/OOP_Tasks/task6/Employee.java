@@ -2,7 +2,7 @@ package OOP_Tasks.task6;
 
 public class Employee {
 
-    private double tariffPerHour = 5;
+    private double tariffPerHour = 5.5;
     public int hours;
 
     public double getTariffPerHour() {
