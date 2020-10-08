@@ -23,27 +23,27 @@ public class ArraysPractice {
 
     public int[] sort(int[] array) {
         int k = 0;
-        int[] newArray = new int[array.length];
+        int[] newArray = new int[array.length];       // array that holds only the min values for each iteration
 
         for (int i = 0; i < array.length; i++) {
             int min = 9999;
-            int[] tempArray = new int[array.length - i];
-            for (int x = 0; x < tempArray.length; x++) {
-                tempArray[x] = array[x + i];
+            int[] tempArray = new int[array.length - i];          //array that holds the values without the min one
+            for (int x = 0; x < tempArray.length; x++) {          //assign the values to tempArray
+                tempArray[x] = array[x + i];                      //each iteration of i tempArray holds -1 value
             }
 
             for (int j = 0; j < tempArray.length; j++) {
                 if (tempArray[j] < min) {
-                    min = tempArray[j];
-                    k = j;
+                    min = tempArray[j];                           //checking the min value
+                    k = j;                                        //saving the index of the min value
                 }
 
             }
             reverse(tempArray, k + 1);
-            for (int y = 0, z = i; y < tempArray.length; y++, z++) {
+            for (int y = 0, z = i; y < tempArray.length; y++, z++) {        //ordering the values
                 array[z] = tempArray[y];
             }
-            newArray[i] = tempArray[0];
+            newArray[i] = tempArray[0];         //adding the min value to the array
         }
         return newArray;
     }
