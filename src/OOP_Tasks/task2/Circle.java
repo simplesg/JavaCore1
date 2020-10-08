@@ -17,14 +17,17 @@ public class Circle extends GraphicObject {
         this.radius = radius;
     }
 
+    //method that returns the value of area of the circle using formula pi*r^2
     public double circleArea(){
         return Math.PI * Math.pow(this.radius, 2);
     }
 
+    //method that returns the value of perimeter of the circle using formula pi*2*r
     public double circlePerimeter(){
         return Math.PI * 2 * this.radius;
     }
 
+    //method implemented from abstract class
     @Override
     public double area(){
         return Math.PI * Math.pow(this.radius, 2);

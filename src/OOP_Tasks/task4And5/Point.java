@@ -3,15 +3,17 @@ package OOP_Tasks.task4And5;
 public class Point {
     private int x, y , z;
 
+    //default constructor
     public Point(){
-
     }
 
+    //two parameters constructor
     public Point(int x, int y){
         this.x = x;
         this.y = y;
     }
 
+    //three parameter constructors
     public Point(int x, int y, int z) {
         this.x = x;
         this.y = y;

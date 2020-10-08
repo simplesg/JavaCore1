@@ -18,15 +18,18 @@ public class Student {
         return age;
     }
 
+    //setter for the method setData
     public void setAge(int age) {
         this.age = age;
     }
 
+    //method setData that uses the setters of the fields
     public void setData(int newAge, String newName){
         this.setAge(newAge);
         this.setName(newName);
     }
 
+//    other possible method of creating setData method
 //    public void setData(int newAge, String newName){
 //        this.name = newName;
 //        this.age = newAge;

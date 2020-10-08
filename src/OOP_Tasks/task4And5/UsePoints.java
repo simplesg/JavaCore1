@@ -7,6 +7,7 @@ public class UsePoints extends Point {
 
     public UsePoints(int x, int y){
         super(x , y);                            //uses constructor with 2 parameters from Point class
+        System.out.println("Using the constructor with 2 parameters from Point class");
     }
 
     public UsePoints(int x , int y, int z){

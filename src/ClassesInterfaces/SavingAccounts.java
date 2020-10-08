@@ -17,8 +17,8 @@ public class SavingAccounts {
     }
 
     public int calculateMonthlyInterest(){
-        int monthlyBenefit = (this.savingsBalance * annualInterestRate)/12;
-        this.savingsBalance += monthlyBenefit;
+        int monthlyBenefit = (this.savingsBalance * annualInterestRate)/12;    //calculating the monthly benefit
+        this.savingsBalance += monthlyBenefit;  //adding the benefit to the saving balance
         return monthlyBenefit;
     }
 
@@ -35,7 +35,7 @@ public class SavingAccounts {
         System.out.println("Savings Balance: " + saver1.getSavingsBalance());
         System.out.println("Monthly Interest Rate is: " + saver2.calculateMonthlyInterest());
         System.out.println("Savings Balance: " + saver2.getSavingsBalance());
-        annualInterestRate = 5;
+        annualInterestRate = 5;                                                                 // as this is a public variable we can access it directly
 //        modifyInterestRate(5);
         System.out.println("Monthly Interest Rate is: " + saver1.calculateMonthlyInterest());
         System.out.println("Savings Balance: " + saver1.getSavingsBalance());
