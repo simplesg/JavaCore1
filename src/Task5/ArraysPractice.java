@@ -48,9 +48,36 @@ public class ArraysPractice {
         return newArray;
     }
 
+    public int[] sortDesc(int[] array) {
+        int k = 0;
+        int[] newArray = new int[array.length];       // array that holds only the min values for each iteration
+
+        for (int i = 0; i < array.length; i++) {
+            int max = -99999;
+            int[] tempArray = new int[array.length - i];          //array that holds the values without the min one
+            for (int x = 0; x < tempArray.length; x++) {          //assign the values to tempArray
+                tempArray[x] = array[x + i];                      //each iteration of i tempArray holds -1 value
+            }
+
+            for (int j = 0; j < tempArray.length; j++) {
+                if (tempArray[j] > max) {
+                    max = tempArray[j];                           //checking the max value
+                    k = j;                                        //saving the index of the max value
+                }
+
+            }
+            reverse(tempArray, k + 1);
+            for (int y = 0, z = i; y < tempArray.length; y++, z++) {        //ordering the values
+                array[z] = tempArray[y];
+            }
+            newArray[i] = tempArray[0];         //adding the min value to the array
+        }
+        return newArray;
+    }
+
     public static void main(String[] args) {
         ArraysPractice arraysPractice = new ArraysPractice();
-//        int[] integers = new int[]{ 1,2,3,4,5,6,7,8 };
+
         while (true) {
             System.out.println("Give the length of array: ");
             Scanner scanner = new Scanner(System.in);
@@ -61,21 +88,21 @@ public class ArraysPractice {
             for (int i = 0; i < arrayLength; i++) {
                 integers[i] = scanner.nextInt();
             }
-//            System.out.println("Give the range from which to reverse: ");
-//            int range = scanner.nextInt();
 
-//            int[] newIntegers = arraysPractice.reverse(integers, range);
-//
-//            for (int number : newIntegers) {
-//                System.out.print(number + "  ");
-//            }
-            System.out.println("");
-            int[] sortedArray = arraysPractice.sort(integers);
-            for (int number : sortedArray) {
+            System.out.println("--------------------------------");
+            System.out.println("Sorted array in Asc order");
+            for (int number : arraysPractice.sort(integers)) {
                 System.out.print(number + "  ");
             }
-
-            System.out.println("Enter Y to continue & EXIT to quit");
+            System.out.println("");
+            System.out.println("--------------------------------");
+            System.out.println("Sorted array in Desc");
+            for (int number : arraysPractice.sortDesc(integers)) {
+                System.out.print(number + "  ");
+            }
+            System.out.println("");
+            System.out.println("--------------------------------");
+            System.out.println("Enter any String to continue OR 'EXIT' to quit");
             String decision = scanner.next();
             if (decision.equals("EXIT")) {
                 break;
