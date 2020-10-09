@@ -21,7 +21,7 @@ public class ArraysPractice {
         return array;
     }
 
-    public int[] sort(int[] array) {
+    public int[] sortAsc(int[] array) {
         int k = 0;
         int[] newArray = new int[array.length];       // array that holds only the min values for each iteration
 
@@ -91,7 +91,7 @@ public class ArraysPractice {
 
             System.out.println("--------------------------------");
             System.out.println("Sorted array in Asc order");
-            for (int number : arraysPractice.sort(integers)) {
+            for (int number : arraysPractice.sortAsc(integers)) {
                 System.out.print(number + "  ");
             }
             System.out.println("");
