@@ -1,13 +1,2 @@
 out
 .idea
-# Default ignored files
-/out/
-/shelf/
-/.idea/workspace.xml
-# Datasource local storage ignored files
-/../../../../../../:\Users\sgorea\IdeaProjects\untitled3\.idea
-/dataSources.local.xml
-# Editor-based HTTP Client requests
-/httpRequests/
- #Ignore out folder
-/../../../../../../:\Users\sgorea\IdeaProjects\untitled3\out\production\untitled3
