@@ -1,4 +1,4 @@
-package Task3;
+package Core1Tasks.Task6.Task3;
 
 import java.util.Scanner;
 

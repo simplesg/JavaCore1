@@ -1,4 +1,4 @@
-package Task6;
+package Core1Tasks.Task6;
 
 public class Person {
     private String name;

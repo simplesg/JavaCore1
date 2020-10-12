@@ -1,6 +1,5 @@
-package Task5;
+package Core1Tasks.Task6.Task5;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArraysPractice {
