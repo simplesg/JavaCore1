@@ -47,7 +47,7 @@ public class IllegibleAccountException extends Exception {
         if (scanner1.nextLine().equals("yes")) {
             secondBankClient.setBalance(bankClient.getBalance() + secondBankClient.getBalance());
             bankClient.setBalance(0);
-        }else{
+        } else {
             System.out.println(bankClient.toString());
             System.out.println(secondBankClient.toString());
         }

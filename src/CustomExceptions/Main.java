@@ -42,15 +42,15 @@ public class Main {
                         bankClient.makeDeposit();
                     } catch (IllegibleAccountException e) {
                         printLines();
-                    }finally {
+                    } finally {
                         System.out.println(bankClient.toString());
-                        try{
+                        try {
                             bankClient.setBalance(50);
                             bankClient.donateMoney(bankClient2, 60);
 
-                        }catch (IllegibleAccountException e){
+                        } catch (IllegibleAccountException e) {
                             printLines();
-                        }finally {
+                        } finally {
                             System.out.println(bankClient);
                             System.out.println(bankClient2);
                         }

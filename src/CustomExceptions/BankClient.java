@@ -99,10 +99,10 @@ public class BankClient {
     }
 
     void donateMoney(BankClient anotherClient, int amount) throws IllegibleAccountException {
-        if(this.canWithdraw(amount)){
+        if (this.canWithdraw(amount)) {
             this.withdrawMoney(amount);
             anotherClient.addMoney(amount);
-        }else{
+        } else {
             throw new IllegibleAccountException(this, anotherClient, amount);
         }
     }
