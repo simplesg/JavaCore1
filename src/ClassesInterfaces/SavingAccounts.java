@@ -1,6 +1,6 @@
 package ClassesInterfaces;
 
-public class SavingAccounts {
+public class SavingAccounts implements CalculateInterest {
     public static int annualInterestRate;
     private int savingsBalance;
 
