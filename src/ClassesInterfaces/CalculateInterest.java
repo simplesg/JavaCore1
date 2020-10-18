@@ -1,5 +1,5 @@
 package ClassesInterfaces;
 
 public interface CalculateInterest {
-    int calculateMonthlyInterest();
+    double calculateMonthlyInterest();
 }
