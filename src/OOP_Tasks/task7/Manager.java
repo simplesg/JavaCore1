@@ -5,6 +5,6 @@ import OOP_Tasks.task6.Employee;
 public class Manager extends Employee {
     @Override
     public double getSalary(){
-        return this.getTariffPerHour() * this.hours * 1.5;
+        return super.getTariffPerHour() * super.hours * 1.5;
     }
 }

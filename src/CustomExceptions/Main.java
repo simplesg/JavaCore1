@@ -1,66 +1,59 @@
 package CustomExceptions;
 
-import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
-        BankClient bankClient = new BankClient(0, "Sorin", LocalDate.of(1998, 9, 28));
-        BankClient bankClient1 = new BankClient(0, "David", LocalDate.of(2001, 4, 12));
-        BankClient bankClient2 = new BankClient(0, "Andrei", LocalDate.of(1978, 9, 1));
-        BankClient bankClient3 = new BankClient(0, "Daniel", LocalDate.of(2003, 5, 4));
-        try {
-            bankClient.setBalance(-10);
-            System.out.println("Trying to withdraw money:");
-            bankClient.withdrawMoney(20);
-        } catch (IllegibleAccountException e) {
-            printLines();
-        } finally {
-            try {
-                System.out.println("Trying to add money:");
-                bankClient.addMoney(60);
-                printLines();
-                System.out.println("Trying to withdraw money");
-                bankClient.withdrawMoney(50);
-            } catch (IllegibleAccountException e) {
-                printLines();
-            } finally {
-                System.out.println("Your accounts balance is: " + bankClient.getBalance());
-                printLines();
-                try {
-                    System.out.println("Trying to know if eligible to deposit!");
-                    bankClient.eligibleToDeposit();
-                } catch (IllegibleAccountException e) {
-                    System.out.println(e.getMessage());
-                    printLines();
-                } finally {
-                    try {
-                        bankClient.addMoney(1000);
-                        printLines();
-                        bankClient.makeDeposit();
-                    } catch (IllegibleAccountException e) {
-                        printLines();
-                    } finally {
-                        System.out.println(bankClient.toString());
-                        try {
-                            bankClient.setBalance(50);
-                            bankClient.donateMoney(bankClient2, 60);
+        //To pass all exceptions:
+        //age > 18  if < 18 a parent or a friend can take credit for you
+        //Have a job = true
+        //Moldovan citizenship = true
+        //salary > 1000
 
-                        } catch (IllegibleAccountException e) {
-                            printLines();
-                        } finally {
-                            System.out.println(bankClient);
-                            System.out.println(bankClient2);
-                        }
-                    }
-                }
+        ClientRepo clientRepo = new ClientRepo();
+        System.out.println("Welcome to our bank!");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Are you new?");
+        String rspv = scanner.nextLine();
+        if (rspv.equals("yes")) {
+            System.out.println("Age:");
+            String age = scanner.nextLine();
+            System.out.println("Name :");
+            String name = scanner.nextLine();
+            System.out.println("Have a job? (yes/no)");
+            String job = scanner.nextLine();
+            if (job.equals("yes")) {
+                job = "true";
+            } else {
+                job = "false";
             }
+            System.out.println("Enter salary :");
+            String salary = scanner.nextLine();
+            System.out.println("Hold a Moldovan citizenship (yes/no)");
+            String citizenship = scanner.nextLine();
+            if (citizenship.equals("yes")) {
+                citizenship = "true";
+            } else {
+                citizenship = "false";
+            }
+            clientRepo.addClient(Integer.parseInt(age),name,Boolean.parseBoolean(job),Double.parseDouble(salary),Boolean.parseBoolean(citizenship));
+        }else{
+            System.out.println("============================");
+        }
+        System.out.println("============================");
+        System.out.println("Enter your name:");
+        String name = scanner.nextLine();
+        try {
+            clientRepo.getClient(name);
+            try {
+                System.out.println("Checking if you can get a credit");
+                clientRepo.getClient(name).canGetCredit();
+            } catch (InvalidClientException m){
+                System.out.println(m.cantGetCredit());
+            }
+        } catch (InvalidClientException e) {
+            System.out.println(e.clientNotFound());
         }
     }
-
-    public static void printLines() {
-        System.out.println("-----------");
-    }
 }
+
