@@ -26,7 +26,7 @@ public class StreamAPI {
         printLines();
         streamAPI.getNelement(integerList, 3).forEach(System.out::println);
         printLines();
-        streamAPI.convertStringToInteger(stringList).forEach(integer -> System.out.println(integer.getClass()));
+        streamAPI.convertStringToInteger(stringList).forEach(integer -> System.out.println(integer));
         printLines();
         streamAPI.MaxAndMin(integerList);
         printLines();
